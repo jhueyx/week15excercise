@@ -4,6 +4,8 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Vue To-Do</title>
+		<!-- Google Font -->
+		<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 
 		<!--Font Awesome  -->
 <!-- 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
@@ -21,11 +23,11 @@
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
-
+		<div id="heading"> To-Do List</div>
 
 	<div id="todo">
 		<section>
-			<input 
+			<input id="input"
 				type="text" 
 				placeholder="Task" 
 				v-model='newTask'
@@ -33,12 +35,25 @@
 		</section>
 		<!-- <p>{{ newTask }}</p> -->
 		<ul>
-			<li v-for="task in todoList">
+			<li v-for="task in todoList" v-bind:class="{ 'done': task.checked }">
+
+		<!-- 	<label>
+              <input type="checkbox" v-model="task.checked">
+              {{ task }}
+            </label>
+ -->
+
+				<input type="checkbox" >
 				<label>{{ task }}</label>
 				<button 
 					type="button"
 					v-on:click="removeTask(task)">X</button>
 			</li>
+
+			<button 
+					class= "btn btn-danger"	
+					type="button"
+					v-on:click="clearAll()">Clear</button>
 		</ul>
 
 
@@ -48,7 +63,7 @@
 
 <!--Scripts  -->
 			<!-- Vue.js -->
-			<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 			<!--jquery updated non-slim -->
 			<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   			<!--popper  -->

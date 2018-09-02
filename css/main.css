@@ -1,0 +1,33 @@
+#heading{
+	font-size: 30px;
+	color: red;
+	text-align: center;
+
+}
+
+body{
+	background-color: black;
+	opacity: 20%;
+	font-family: 'Permanent Marker', cursive;
+}
+
+#todo{
+	font-size: 30px;
+	color: white;
+	text-align: center;
+}
+
+ul{
+ 	list-style: none;
+}
+
+.done label {
+    text-decoration: line-through;
+    color: grey;
+}
+
+
+:checked +  label{
+	    text-decoration: line-through;
+	    color: red;
+}
