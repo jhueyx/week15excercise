@@ -35,16 +35,11 @@
 		</section>
 		<!-- <p>{{ newTask }}</p> -->
 		<ul>
-			<li v-for="task in todoList" v-bind:class="{ 'done': task.checked }">
-
-		<!-- 	<label>
-              <input type="checkbox" v-model="task.checked">
-              {{ task }}
-            </label>
- -->
+			<li v-for="task in todoList" class= "animated shake">
 
 				<input type="checkbox" >
-				<label>{{ task }}</label>
+				<label v-on:click="edit(task)">{{ task }}</label>
+         	
 				<button 
 					type="button"
 					v-on:click="removeTask(task)">X</button>

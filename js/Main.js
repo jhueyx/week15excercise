@@ -17,8 +17,8 @@ var todo = new Vue({
 		},
 		clearAll: function() {
 			//Reset the List, using an array versus an empty ''
-			this.todoList = [];
-		},
-		
+			this.todoList = [];      
+            }
+
 	}
 });
